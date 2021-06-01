@@ -17,9 +17,28 @@ function reverseString(text) {
             result += text[i]
        }
     
-        return result
-    
+        return result   
 }
 
+
+//for... of statement
+function reverseString(text){
+    let result = "";
+    
+    for(let char of text) {
+        result = char + result
+    }
+    
+    return result;
+}
+
+//recursive statement
+function reverseString(text) {
+    if (text === "") {
+        return ""
+    } else {
+        return reverseString(text.substr(1)) + text[0]
+    }
+}
 
 module.exports = reverseString
