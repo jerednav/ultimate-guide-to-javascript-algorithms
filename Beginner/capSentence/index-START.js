@@ -5,7 +5,7 @@ return the equivalent of the sentence when capitalised. E.g
 */
 
 
-
+//Using .forEach() method
 
 function capSentence(text) {
    let wordsArray = text.toLowerCase().split(' ')
@@ -16,6 +16,29 @@ function capSentence(text) {
    });
   
   return capsArray.join (' ')
+}
+
+
+// Using .map and .slice
+
+function capSentence(text) {
+  let wordsArray = text.toLowerCase().split(' ')
+  let capsArray = wordsArray.map(word=> {
+    return word[0] + word.slice(1)
+  })
+    return capsArray.join(' ')
+}
+
+
+// Using .map and .replace
+
+function capSentence(text) {
+  let wordsArray = text.toLowerCase().split(' ')
+  let capsArray = wordsArray.map(word=> {
+    return word.replace(word[0], word[0].toUpperCase())
+  })
+  
+  return capsArray.join(' ')
 }
 
 
